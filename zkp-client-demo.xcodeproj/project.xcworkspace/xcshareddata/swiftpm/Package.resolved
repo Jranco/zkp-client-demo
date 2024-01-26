@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "bigint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/attaswift/BigInt.git",
+      "state" : {
+        "revision" : "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+        "version" : "5.3.0"
+      }
+    },
+    {
+      "identity" : "zkp-client",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jranco/zkp-client",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98d91d653800ff74429eb46924409a3d099583cf"
+      }
+    }
+  ],
+  "version" : 2
+}

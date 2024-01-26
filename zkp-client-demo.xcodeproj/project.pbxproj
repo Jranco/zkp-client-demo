@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F313E772B645DAB0064B906 /* zkp-client in Frameworks */ = {isa = PBXBuildFile; productRef = 8F313E762B645DAB0064B906 /* zkp-client */; };
+		8FF90EC42B62EE41007FDFCA /* zkp_client_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */; };
+		8FF90EC62B62EE41007FDFCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EC52B62EE41007FDFCA /* ContentView.swift */; };
+		8FF90EC82B62EE44007FDFCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF90EC72B62EE44007FDFCA /* Assets.xcassets */; };
+		8FF90ECB2B62EE44007FDFCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF90ECA2B62EE44007FDFCA /* Preview Assets.xcassets */; };
+		8FF90ED52B62EE44007FDFCA /* zkp_client_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90ED42B62EE44007FDFCA /* zkp_client_demoTests.swift */; };
+		8FF90EDF2B62EE45007FDFCA /* zkp_client_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */; };
+		8FF90EE12B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FF90ED12B62EE44007FDFCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FF90EB82B62EE41007FDFCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FF90EBF2B62EE41007FDFCA;
+			remoteInfo = "zkp-client-demo";
+		};
+		8FF90EDB2B62EE45007FDFCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FF90EB82B62EE41007FDFCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FF90EBF2B62EE41007FDFCA;
+			remoteInfo = "zkp-client-demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zkp-client-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoApp.swift; sourceTree = "<group>"; };
+		8FF90EC52B62EE41007FDFCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8FF90EC72B62EE44007FDFCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FF90ECA2B62EE44007FDFCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8FF90ED02B62EE44007FDFCA /* zkp-client-demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zkp-client-demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF90ED42B62EE44007FDFCA /* zkp_client_demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoTests.swift; sourceTree = "<group>"; };
+		8FF90EDA2B62EE45007FDFCA /* zkp-client-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zkp-client-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITests.swift; sourceTree = "<group>"; };
+		8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FF90EBD2B62EE41007FDFCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F313E772B645DAB0064B906 /* zkp-client in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ECD2B62EE44007FDFCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ED72B62EE45007FDFCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8FF90EB72B62EE41007FDFCA = {
+			isa = PBXGroup;
+			children = (
+				8FF90EC22B62EE41007FDFCA /* zkp-client-demo */,
+				8FF90ED32B62EE44007FDFCA /* zkp-client-demoTests */,
+				8FF90EDD2B62EE45007FDFCA /* zkp-client-demoUITests */,
+				8FF90EC12B62EE41007FDFCA /* Products */,
+				8FF90EEF2B62F052007FDFCA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8FF90EC12B62EE41007FDFCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */,
+				8FF90ED02B62EE44007FDFCA /* zkp-client-demoTests.xctest */,
+				8FF90EDA2B62EE45007FDFCA /* zkp-client-demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FF90EC22B62EE41007FDFCA /* zkp-client-demo */ = {
+			isa = PBXGroup;
+			children = (
+				8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */,
+				8FF90EC52B62EE41007FDFCA /* ContentView.swift */,
+				8FF90EC72B62EE44007FDFCA /* Assets.xcassets */,
+				8FF90EC92B62EE44007FDFCA /* Preview Content */,
+			);
+			path = "zkp-client-demo";
+			sourceTree = "<group>";
+		};
+		8FF90EC92B62EE44007FDFCA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8FF90ECA2B62EE44007FDFCA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8FF90ED32B62EE44007FDFCA /* zkp-client-demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FF90ED42B62EE44007FDFCA /* zkp_client_demoTests.swift */,
+			);
+			path = "zkp-client-demoTests";
+			sourceTree = "<group>";
+		};
+		8FF90EDD2B62EE45007FDFCA /* zkp-client-demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */,
+				8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */,
+			);
+			path = "zkp-client-demoUITests";
+			sourceTree = "<group>";
+		};
+		8FF90EEF2B62F052007FDFCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FF90EBF2B62EE41007FDFCA /* zkp-client-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF90EE42B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demo" */;
+			buildPhases = (
+				8FF90EBC2B62EE41007FDFCA /* Sources */,
+				8FF90EBD2B62EE41007FDFCA /* Frameworks */,
+				8FF90EBE2B62EE41007FDFCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "zkp-client-demo";
+			packageProductDependencies = (
+				8F313E762B645DAB0064B906 /* zkp-client */,
+			);
+			productName = "zkp-client-demo";
+			productReference = 8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FF90ECF2B62EE44007FDFCA /* zkp-client-demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF90EE72B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demoTests" */;
+			buildPhases = (
+				8FF90ECC2B62EE44007FDFCA /* Sources */,
+				8FF90ECD2B62EE44007FDFCA /* Frameworks */,
+				8FF90ECE2B62EE44007FDFCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FF90ED22B62EE44007FDFCA /* PBXTargetDependency */,
+			);
+			name = "zkp-client-demoTests";
+			productName = "zkp-client-demoTests";
+			productReference = 8FF90ED02B62EE44007FDFCA /* zkp-client-demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FF90ED92B62EE45007FDFCA /* zkp-client-demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF90EEA2B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demoUITests" */;
+			buildPhases = (
+				8FF90ED62B62EE45007FDFCA /* Sources */,
+				8FF90ED72B62EE45007FDFCA /* Frameworks */,
+				8FF90ED82B62EE45007FDFCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FF90EDC2B62EE45007FDFCA /* PBXTargetDependency */,
+			);
+			name = "zkp-client-demoUITests";
+			productName = "zkp-client-demoUITests";
+			productReference = 8FF90EDA2B62EE45007FDFCA /* zkp-client-demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FF90EB82B62EE41007FDFCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8FF90EBF2B62EE41007FDFCA = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					8FF90ECF2B62EE44007FDFCA = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 8FF90EBF2B62EE41007FDFCA;
+					};
+					8FF90ED92B62EE45007FDFCA = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 8FF90EBF2B62EE41007FDFCA;
+					};
+				};
+			};
+			buildConfigurationList = 8FF90EBB2B62EE41007FDFCA /* Build configuration list for PBXProject "zkp-client-demo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FF90EB72B62EE41007FDFCA;
+			packageReferences = (
+				8F313E752B645DAB0064B906 /* XCRemoteSwiftPackageReference "zkp-client" */,
+			);
+			productRefGroup = 8FF90EC12B62EE41007FDFCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FF90EBF2B62EE41007FDFCA /* zkp-client-demo */,
+				8FF90ECF2B62EE44007FDFCA /* zkp-client-demoTests */,
+				8FF90ED92B62EE45007FDFCA /* zkp-client-demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FF90EBE2B62EE41007FDFCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF90ECB2B62EE44007FDFCA /* Preview Assets.xcassets in Resources */,
+				8FF90EC82B62EE44007FDFCA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ECE2B62EE44007FDFCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ED82B62EE45007FDFCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FF90EBC2B62EE41007FDFCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF90EC62B62EE41007FDFCA /* ContentView.swift in Sources */,
+				8FF90EC42B62EE41007FDFCA /* zkp_client_demoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ECC2B62EE44007FDFCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF90ED52B62EE44007FDFCA /* zkp_client_demoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF90ED62B62EE45007FDFCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF90EE12B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift in Sources */,
+				8FF90EDF2B62EE45007FDFCA /* zkp_client_demoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FF90ED22B62EE44007FDFCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FF90EBF2B62EE41007FDFCA /* zkp-client-demo */;
+			targetProxy = 8FF90ED12B62EE44007FDFCA /* PBXContainerItemProxy */;
+		};
+		8FF90EDC2B62EE45007FDFCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FF90EBF2B62EE41007FDFCA /* zkp-client-demo */;
+			targetProxy = 8FF90EDB2B62EE45007FDFCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8FF90EE22B62EE45007FDFCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8FF90EE32B62EE45007FDFCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FF90EE52B62EE45007FDFCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FF90EE62B62EE45007FDFCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8FF90EE82B62EE45007FDFCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zkp-client-demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/zkp-client-demo";
+			};
+			name = Debug;
+		};
+		8FF90EE92B62EE45007FDFCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zkp-client-demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/zkp-client-demo";
+			};
+			name = Release;
+		};
+		8FF90EEB2B62EE45007FDFCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "zkp-client-demo";
+			};
+			name = Debug;
+		};
+		8FF90EEC2B62EE45007FDFCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HUBMAYY26V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "zkp-client-demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FF90EBB2B62EE41007FDFCA /* Build configuration list for PBXProject "zkp-client-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF90EE22B62EE45007FDFCA /* Debug */,
+				8FF90EE32B62EE45007FDFCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FF90EE42B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF90EE52B62EE45007FDFCA /* Debug */,
+				8FF90EE62B62EE45007FDFCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FF90EE72B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF90EE82B62EE45007FDFCA /* Debug */,
+				8FF90EE92B62EE45007FDFCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FF90EEA2B62EE45007FDFCA /* Build configuration list for PBXNativeTarget "zkp-client-demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF90EEB2B62EE45007FDFCA /* Debug */,
+				8FF90EEC2B62EE45007FDFCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F313E752B645DAB0064B906 /* XCRemoteSwiftPackageReference "zkp-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jranco/zkp-client";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F313E762B645DAB0064B906 /* zkp-client */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F313E752B645DAB0064B906 /* XCRemoteSwiftPackageReference "zkp-client" */;
+			productName = "zkp-client";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8FF90EB82B62EE41007FDFCA /* Project object */;
+}

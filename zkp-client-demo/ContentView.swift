@@ -11,7 +11,7 @@ import zkp_client
 struct ContentView: View {
 	
 	@ObservedObject var viewModel: ContentViewModel
-
+	var userID = "tom24"
 	init() {
 		self.viewModel = ContentViewModel()
 	}
@@ -22,13 +22,25 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-			
-			Button("register") {
+
+			Button("login") {
 				do {
-					try self.viewModel.client?.sendRegistration(payload: "some-dummy-payload".data(using: .utf8)!,
-																userID: "tomtom")
+					try self.viewModel.client?.sendAuthentication(payload: "some-dummy-payload".data(using: .utf8)!,
+																userID: userID)
 				} catch {
 					print("error registering: \(error)")
+				}
+			}
+			.frame(width: 200, height: 60)
+
+			Button("register") {
+				Task {
+					do {
+						try self.viewModel.client?.sendRegistration(payload: "some-dummy-payload".data(using: .utf8)!,
+																	userID: userID)
+					} catch {
+						print("error registering: \(error)")
+					}
 				}
 			}
 			.frame(width: 200, height: 60)
@@ -45,7 +57,11 @@ class ContentViewModel: ObservableObject {
 	@Published var client: ZKPClient?
 
 	init() {
-		self.client = try? ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 512)),
-									 conectionConfig: .init(path: "ws://192.168.178.52:8011/authenticate/"))
+		do {
+			self.client = try ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 200)),
+										config: .init(baseURL: "ws://192.168.178.52:8012"))
+		} catch {
+			print("fail to create the client: \(error.localizedDescription)")
+		}
 	}
 }

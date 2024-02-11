@@ -11,7 +11,6 @@ import zkp_client
 struct ContentView: View {
 	
 	@ObservedObject var viewModel: ContentViewModel
-	var userID = "tom24"
 	init() {
 		self.viewModel = ContentViewModel()
 	}
@@ -24,24 +23,12 @@ struct ContentView: View {
             Text("Hello, world!")
 
 			Button("login") {
-				do {
-					try self.viewModel.client?.sendAuthentication(payload: "some-dummy-payload".data(using: .utf8)!,
-																userID: userID)
-				} catch {
-					print("error registering: \(error)")
-				}
+				viewModel.didTapLogin()
 			}
 			.frame(width: 200, height: 60)
 
 			Button("register") {
-				Task {
-					do {
-						try self.viewModel.client?.sendRegistration(payload: "some-dummy-payload".data(using: .utf8)!,
-																	userID: userID)
-					} catch {
-						print("error registering: \(error)")
-					}
-				}
+				viewModel.didTapRegister()
 			}
 			.frame(width: 200, height: 60)
         }
@@ -58,10 +45,31 @@ class ContentViewModel: ObservableObject {
 
 	init() {
 		do {
-			self.client = try ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 200)),
-										config: .init(baseURL: "ws://192.168.178.52:8012"))
+			self.client = try ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 256)),
+										apiConfig: APIConfiguration(baseWSURL: "ws://192.168.178.52:8012", baseHTTPURL: "http://192.168.178.52:8012"),
+										userID: "tom42")
 		} catch {
 			print("fail to create the client: \(error.localizedDescription)")
+		}
+	}
+	
+	func didTapLogin() {
+		Task {
+			do {
+				try await client?.sendAuthentication(payload: "some-dummy-payload".data(using: .utf8)!)
+			} catch {
+				print("error registering: \(error)")
+			}
+		}
+	}
+	
+	func didTapRegister() {
+		Task {
+			do {
+				try await client?.sendRegistration(payload: "some-dummy-payload".data(using: .utf8)!)
+			} catch {
+				print("error registering: \(error)")
+			}
 		}
 	}
 }

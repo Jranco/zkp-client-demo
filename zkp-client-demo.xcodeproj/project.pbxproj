@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8F313E772B645DAB0064B906 /* zkp-client in Frameworks */ = {isa = PBXBuildFile; productRef = 8F313E762B645DAB0064B906 /* zkp-client */; };
+		8F52A9682B98E6AD00F0D662 /* AlertBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A9662B98E6AD00F0D662 /* AlertBanner.swift */; };
+		8F52A9692B98E6AD00F0D662 /* AlertQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A9672B98E6AD00F0D662 /* AlertQueueScheduler.swift */; };
+		8F52A96B2B98E6CA00F0D662 /* AlertBannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A96A2B98E6CA00F0D662 /* AlertBannerModifier.swift */; };
+		8F52A96D2B98E6E400F0D662 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A96C2B98E6E400F0D662 /* View+Extension.swift */; };
+		8F52A96F2B98F05B00F0D662 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F52A96E2B98F05B00F0D662 /* Queue.swift */; };
 		8FF90EC42B62EE41007FDFCA /* zkp_client_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */; };
 		8FF90EC62B62EE41007FDFCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EC52B62EE41007FDFCA /* ContentView.swift */; };
 		8FF90EC82B62EE44007FDFCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF90EC72B62EE44007FDFCA /* Assets.xcassets */; };
@@ -15,6 +20,7 @@
 		8FF90ED52B62EE44007FDFCA /* zkp_client_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90ED42B62EE44007FDFCA /* zkp_client_demoTests.swift */; };
 		8FF90EDF2B62EE45007FDFCA /* zkp_client_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */; };
 		8FF90EE12B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */; };
+		8FFA8A192B8EAEC300903369 /* SwiftCBOR in Frameworks */ = {isa = PBXBuildFile; productRef = 8FFA8A182B8EAEC300903369 /* SwiftCBOR */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F52A9642B97BEF100F0D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8F52A9662B98E6AD00F0D662 /* AlertBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBanner.swift; sourceTree = "<group>"; };
+		8F52A9672B98E6AD00F0D662 /* AlertQueueScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertQueueScheduler.swift; sourceTree = "<group>"; };
+		8F52A96A2B98E6CA00F0D662 /* AlertBannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBannerModifier.swift; sourceTree = "<group>"; };
+		8F52A96C2B98E6E400F0D662 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		8F52A96E2B98F05B00F0D662 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		8FD0D3BE2B79706F00BA5076 /* zkp-client */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "zkp-client"; path = "../../../../JRANCO/Swift-Packages/zkp-client"; sourceTree = "<group>"; };
 		8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zkp-client-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoApp.swift; sourceTree = "<group>"; };
 		8FF90EC52B62EE41007FDFCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +58,7 @@
 		8FF90EDA2B62EE45007FDFCA /* zkp-client-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zkp-client-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITests.swift; sourceTree = "<group>"; };
 		8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FFA8A162B8E924A00903369 /* zkp-client-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "zkp-client-demo.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFA8A192B8EAEC300903369 /* SwiftCBOR in Frameworks */,
 				8F313E772B645DAB0064B906 /* zkp-client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,9 +88,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F52A9652B98E6AD00F0D662 /* AlertBanner */ = {
+			isa = PBXGroup;
+			children = (
+				8F52A9662B98E6AD00F0D662 /* AlertBanner.swift */,
+				8F52A9672B98E6AD00F0D662 /* AlertQueueScheduler.swift */,
+				8F52A96A2B98E6CA00F0D662 /* AlertBannerModifier.swift */,
+				8F52A96C2B98E6E400F0D662 /* View+Extension.swift */,
+			);
+			path = AlertBanner;
+			sourceTree = "<group>";
+		};
 		8FF90EB72B62EE41007FDFCA = {
 			isa = PBXGroup;
 			children = (
+				8FD0D3BE2B79706F00BA5076 /* zkp-client */,
 				8FF90EC22B62EE41007FDFCA /* zkp-client-demo */,
 				8FF90ED32B62EE44007FDFCA /* zkp-client-demoTests */,
 				8FF90EDD2B62EE45007FDFCA /* zkp-client-demoUITests */,
@@ -97,6 +124,10 @@
 		8FF90EC22B62EE41007FDFCA /* zkp-client-demo */ = {
 			isa = PBXGroup;
 			children = (
+				8F52A96E2B98F05B00F0D662 /* Queue.swift */,
+				8F52A9652B98E6AD00F0D662 /* AlertBanner */,
+				8F52A9642B97BEF100F0D662 /* Info.plist */,
+				8FFA8A162B8E924A00903369 /* zkp-client-demo.entitlements */,
 				8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */,
 				8FF90EC52B62EE41007FDFCA /* ContentView.swift */,
 				8FF90EC72B62EE44007FDFCA /* Assets.xcassets */,
@@ -155,6 +186,7 @@
 			name = "zkp-client-demo";
 			packageProductDependencies = (
 				8F313E762B645DAB0064B906 /* zkp-client */,
+				8FFA8A182B8EAEC300903369 /* SwiftCBOR */,
 			);
 			productName = "zkp-client-demo";
 			productReference = 8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */;
@@ -203,6 +235,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+					"New-1",
+				);
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
@@ -230,6 +266,7 @@
 			mainGroup = 8FF90EB72B62EE41007FDFCA;
 			packageReferences = (
 				8F313E752B645DAB0064B906 /* XCRemoteSwiftPackageReference "zkp-client" */,
+				8FFA8A172B8EAEC200903369 /* XCRemoteSwiftPackageReference "SwiftCBOR" */,
 			);
 			productRefGroup = 8FF90EC12B62EE41007FDFCA /* Products */;
 			projectDirPath = "";
@@ -273,8 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F52A9692B98E6AD00F0D662 /* AlertQueueScheduler.swift in Sources */,
+				8F52A96F2B98F05B00F0D662 /* Queue.swift in Sources */,
+				8F52A96D2B98E6E400F0D662 /* View+Extension.swift in Sources */,
 				8FF90EC62B62EE41007FDFCA /* ContentView.swift in Sources */,
 				8FF90EC42B62EE41007FDFCA /* zkp_client_demoApp.swift in Sources */,
+				8F52A9682B98E6AD00F0D662 /* AlertBanner.swift in Sources */,
+				8F52A96B2B98E6CA00F0D662 /* AlertBannerModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,12 +477,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "zkp-client-demo/zkp-client-demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
 				DEVELOPMENT_TEAM = HUBMAYY26V;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "zkp-client-demo/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth should be on";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We need to use bluetooth to bind new devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,12 +511,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "zkp-client-demo/zkp-client-demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
 				DEVELOPMENT_TEAM = HUBMAYY26V;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "zkp-client-demo/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth should be on";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We need to use bluetooth to bind new devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -614,6 +666,14 @@
 				kind = branch;
 			};
 		};
+		8FFA8A172B8EAEC200903369 /* XCRemoteSwiftPackageReference "SwiftCBOR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/valpackett/SwiftCBOR";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -621,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F313E752B645DAB0064B906 /* XCRemoteSwiftPackageReference "zkp-client" */;
 			productName = "zkp-client";
+		};
+		8FFA8A182B8EAEC300903369 /* SwiftCBOR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FFA8A172B8EAEC200903369 /* XCRemoteSwiftPackageReference "SwiftCBOR" */;
+			productName = SwiftCBOR;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

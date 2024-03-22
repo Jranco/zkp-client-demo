@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "zkp-client",
+      "identity" : "swiftcbor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Jranco/zkp-client",
+      "location" : "https://github.com/valpackett/SwiftCBOR",
       "state" : {
-        "branch" : "main",
-        "revision" : "64b12c718ffce81c2cdfdd3f304661ee20528532"
+        "branch" : "master",
+        "revision" : "edc01765cf6b3685bb622bb09242ef5964fb991b"
       }
     }
   ],

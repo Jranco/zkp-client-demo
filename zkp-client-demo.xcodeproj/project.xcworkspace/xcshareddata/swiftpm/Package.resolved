@@ -1,4 +1,5 @@
 {
+  "originHash" : "102eca2eb37261041fa415f7d48d3010e9d2070fd3550b0f29d917ca63784140",
   "pins" : [
     {
       "identity" : "bigint",
@@ -17,7 +18,16 @@
         "branch" : "master",
         "revision" : "edc01765cf6b3685bb622bb09242ef5964fb991b"
       }
+    },
+    {
+      "identity" : "zkp-client",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jranco/zkp-client",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cf0d6b6c6c0eb9e5dba2c553ddce4062e4a51171"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

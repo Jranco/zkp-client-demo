@@ -11,10 +11,10 @@ import zkp_client
 @main
 struct zkp_client_demoApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-
+	@State var viewModel = ContentViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			ContentView(viewModel: viewModel)
         }
     }
 }
@@ -23,6 +23,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 		print("App Did Launch!")
+		let deviceID = UIDevice.current.identifierForVendor?.uuidString
+		print("Vendor id: \(deviceID)")
 		return true
 	}
 	
@@ -81,7 +83,13 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 		else {
 			return
 		}
-
-		self.authenticator = BindingAuthenticator(serviceID: serviceID, characteristicID: characteristicID)
+		let client = try! ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 2048)),
+							   apiConfig: APIConfiguration(baseWSURL: "ws://192.168.2.111:8011", baseHTTPURL: "https://192.168.2.111:8011"),
+										userID: "thomas111")
+		self.authenticator = BindingAuthenticator(serviceID: serviceID, characteristicID: characteristicID, client: client)
 	}
 }
+
+/// 192.168.178.52:8004
+/// "ws://33fc-2003-ed-5f26-b800-75c5-b5d4-a4f9-d3ad.ngrok-free.app"
+/// https://33fc-2003-ed-5f26-b800-75c5-b5d4-a4f9-d3ad.ngrok-free.app"

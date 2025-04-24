@@ -47,7 +47,6 @@
 		8F52A96A2B98E6CA00F0D662 /* AlertBannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBannerModifier.swift; sourceTree = "<group>"; };
 		8F52A96C2B98E6E400F0D662 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		8F52A96E2B98F05B00F0D662 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		8FD0D3BE2B79706F00BA5076 /* zkp-client */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "zkp-client"; path = "../../../../JRANCO/Swift-Packages/zkp-client"; sourceTree = "<group>"; };
 		8FF90EC02B62EE41007FDFCA /* zkp-client-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zkp-client-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoApp.swift; sourceTree = "<group>"; };
 		8FF90EC52B62EE41007FDFCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +57,6 @@
 		8FF90EDA2B62EE45007FDFCA /* zkp-client-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zkp-client-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF90EDE2B62EE45007FDFCA /* zkp_client_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITests.swift; sourceTree = "<group>"; };
 		8FF90EE02B62EE45007FDFCA /* zkp_client_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zkp_client_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8FFA8A162B8E924A00903369 /* zkp-client-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "zkp-client-demo.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 		8FF90EB72B62EE41007FDFCA = {
 			isa = PBXGroup;
 			children = (
-				8FD0D3BE2B79706F00BA5076 /* zkp-client */,
 				8FF90EC22B62EE41007FDFCA /* zkp-client-demo */,
 				8FF90ED32B62EE44007FDFCA /* zkp-client-demoTests */,
 				8FF90EDD2B62EE45007FDFCA /* zkp-client-demoUITests */,
@@ -127,7 +124,6 @@
 				8F52A96E2B98F05B00F0D662 /* Queue.swift */,
 				8F52A9652B98E6AD00F0D662 /* AlertBanner */,
 				8F52A9642B97BEF100F0D662 /* Info.plist */,
-				8FFA8A162B8E924A00903369 /* zkp-client-demo.entitlements */,
 				8FF90EC32B62EE41007FDFCA /* zkp_client_demoApp.swift */,
 				8FF90EC52B62EE41007FDFCA /* ContentView.swift */,
 				8FF90EC72B62EE44007FDFCA /* Assets.xcassets */,
@@ -478,6 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "zkp-client-demo/zkp-client-demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
@@ -500,6 +497,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "zkp-client-demo/zkp-client-demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"zkp-client-demo/Preview Content\"";
@@ -534,6 +533,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JrancoMobile.zkp-client-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

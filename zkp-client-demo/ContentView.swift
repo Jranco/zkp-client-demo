@@ -41,8 +41,8 @@ public struct QRCodeView: View {
 struct ContentView: View {
 	
 	@ObservedObject var viewModel: ContentViewModel
-	init() {
-		self.viewModel = ContentViewModel()
+	init(viewModel: ContentViewModel) {
+		self.viewModel = viewModel
 	}
 
     var body: some View {
@@ -66,13 +66,13 @@ struct ContentView: View {
 				}
 				.frame(width: 200, height: 60)
 				
-				Button("auth") {
-					viewModel.didTapPasskey()
-				}
-				.frame(width: 200, height: 60)
+//				Button("auth") {
+//					viewModel.didTapPasskey()
+//				}
+//				.frame(width: 200, height: 60)
 				
 				NavigationLink("Bind new device") {
-					DeviceBindingView(delegate: nil, devicePK: try! viewModel.client!.getDevicePublicKey())
+					DeviceBindingView(delegate: nil, client: viewModel.client!)
 				}
 			}
 			.padding()
@@ -80,21 +80,21 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
 
 class ContentViewModel: NSObject, ObservableObject, ASAuthorizationControllerDelegate {
 	
-	static var userID = "tom42"
+	static var userID = "thomas111"
 	
 	@Published var client: ZKPClient?
 	let authPresentationProvider = AuthorizationPresentationContextProvider()
 	override init() {
 		super.init()
 		do {
-			self.client = try ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 256)),
-										apiConfig: APIConfiguration(baseWSURL: "ws://192.168.178.52:8013", baseHTTPURL: "http://192.168.178.52:8013"),
+			self.client = try ZKPClient(flavor: .fiatShamir(config: .init(coprimeWidth: 2048)),
+										apiConfig: APIConfiguration(baseWSURL: "ws://192.168.2.3:8012", baseHTTPURL: "http://192.168.2.3:8012"),
 										userID: Self.userID)
 		} catch {
 			print("fail to create the client: \(error.localizedDescription)")
@@ -103,6 +103,7 @@ class ContentViewModel: NSObject, ObservableObject, ASAuthorizationControllerDel
 	
 	func didTapLogin() {
 		Task {
+			
 			do {
 				try await client?.sendAuthentication(payload: "some-dummy-payload".data(using: .utf8)!)
 			} catch {
@@ -123,36 +124,168 @@ class ContentViewModel: NSObject, ObservableObject, ASAuthorizationControllerDel
 	
 	func didTapPasskey() {
 		let challenge: Data! = "super-challenge".data(using: .utf8)
-		let userID: Data! = "segk@gmail.com".data(using: .utf8)
-		let platformProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: "164f-2003-ed-5f07-cf00-5589-d72a-cb0-6c6f.ngrok-free.app")
+		let userID: Data! = "segjjk@gmail.com".data(using: .utf8)
+		let platformProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: "4a5b-2003-ed-5f3f-e300-84da-5e51-6029-881a.ngrok-free.app")
 		let platformKeyRequest = platformProvider.createCredentialRegistrationRequest(challenge: challenge, name: "Thomas Segkoulis", userID: userID)
-		let authController = ASAuthorizationController(authorizationRequests: [platformKeyRequest])
+		let req = platformProvider.createCredentialAssertionRequest(challenge: challenge)
+		let authController = ASAuthorizationController(authorizationRequests: [req])
 		authController.delegate = self
 		authController.presentationContextProvider = authPresentationProvider
 		authController.performRequests()
 	}
 	
-	// MARK: - ASAuthorizationControllerDelegate
+	func registerPasskey() {
+		/// Step 1 - Get challenge from server
+		let challenge: Data! = "super-challenge".data(using: .utf8)
+		
+		/// Step 2 - Setup request
+		let userID: Data! = "segjjk@gmail.com".data(using: .utf8)
+		let platformProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: "4a5b-2003-ed-5f3f-e300-84da-5e51-6029-881a.ngrok-free.app")
+		let registrationRequest = platformProvider.createCredentialRegistrationRequest(challenge: challenge, name: "Thomas Segkoulis", userID: userID)
+
+		/// Step 3 - Setup auth controller to execute request
+		let authController = ASAuthorizationController(authorizationRequests: [registrationRequest])
+		authController.delegate = self
+		authController.presentationContextProvider = authPresentationProvider
+		
+		/// Step 4 - Execute request
+		authController.performRequests()
+	}
 	
+	
+	func authWithPasskey() {
+		/// Step 1 - Get challenge from server
+		let challenge: Data! = "super-challenge".data(using: .utf8)
+		
+		/// Step 2 - Setup request
+		let userID: Data! = "segjjk@gmail.com".data(using: .utf8)
+		let platformProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: "4a5b-2003-ed-5f3f-e300-84da-5e51-6029-881a.ngrok-free.app")
+		let authenticationRequest = platformProvider.createCredentialAssertionRequest(challenge: challenge)
+
+		/// Step 3 - Setup auth controller to execute request
+		let authController = ASAuthorizationController(authorizationRequests: [authenticationRequest])
+		authController.delegate = self
+		authController.presentationContextProvider = authPresentationProvider
+		
+		/// Step 4 - Execute request
+		authController.performRequests()
+	}
+	
+	// MARK: - ASAuthorizationControllerDelegate
+
 	func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-		if let auth =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialRegistration {
-			let json = auth.rawClientDataJSON
-			print("json: \(String(data: json, encoding: .utf8)!)")
+		if let registrationCredential =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialRegistration {
+			let rawClientDataJSON = registrationCredential.rawClientDataJSON
+			let attestation = registrationCredential.rawAttestationObject
+			
+			
+//			print("json: \(String(data: json, encoding: .utf8)!)")
 //			print("credentialID: \(String(data: auth.credentialID, encoding: .utf8)!)")
 			
-			if let attestationObject = auth.rawAttestationObject {
-			
-				let decodedAtt = decodeRawAttestationObject(rawAttestationObject: [UInt8](attestationObject))
-				print("decodedAtt: \(decodedAtt)")
-				let att64 = attestationObject.base64EncodedString() // base64EncodedString()
-				
-				let clientData = auth.rawClientDataJSON.base64EncodedString()
+//			if let attestationObject = auth.rawAttestationObject {
+//				
+//				// Extract components from the credential
+//				  let rawId = auth.credentialID // The credential ID in raw format
+//				  let clientDataJSON = auth.rawClientDataJSON // The clientDataJSON object
+//
+//				  // Base64 or Base64Url encode the data to send over to the server
+//				  let rawIdBase64 = rawId.base64EncodedString()
+//				  let clientDataBase64 = clientDataJSON.base64EncodedString()
+//					let attestationBase64 = attestationObject.base64EncodedString()
+//
+//				  // Create a dictionary to send to the server
+//				  let registrationPayload: [String: Any] = [
+//					  "id": rawIdBase64,
+//					  "clientDataJSON": clientDataBase64,
+//					  "attestationObject": attestationBase64,
+//					  "type": "public-key"
+//				  ]
+//
+//				
+//				Task {
+//					let jsonData = try JSONSerialization.data(withJSONObject: registrationPayload, options: [])
+//					let request = WebauthnRegistration(base: "4a5b-2003-ed-5f3f-e300-84da-5e51-6029-881a.ngrok-free.app", body: jsonData)
+//					
+//					let response = try await request.execute()
+//					print("=== response: \(response)")
+//					if let httpResponse = response.1 as? HTTPURLResponse {
+//						print("--- webauthn --- httpResponse: \(httpResponse)")
+//					}
+//				}
+//			
+//				let decodedAtt = decodeRawAttestationObject(rawAttestationObject: [UInt8](attestationObject))
+//				print("decodedAtt: \(decodedAtt)")
+//				let att64 = attestationObject.base64EncodedString() // base64EncodedString()
+//				
+//				let clientData = auth.rawClientDataJSON.base64EncodedString()
+//
+//			}
+//		} else if let auth =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialAssertion {
+//			let clientJSON = String(data: auth.rawClientDataJSON, encoding: .utf8)
+//			print("credentialID: \(auth.credentialID)")
+//			print("clientJSON: \(clientJSON)")
+////			let authJSON = String(data: auth.rawAuthenticatorData, encoding: .utf8)
+//			
+//			let authJSON = decodeRawAttestationObject(rawAttestationObject: [UInt8](auth.rawAuthenticatorData))
+//			
+//			print("authJSON: \(authJSON)")
+//		}
+	}
 
-			}
-		} else if let auth =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialAssertion {
-//			print("auth: \(auth.credentialID)")
-			
-		}
+//	func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+//		if let auth =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialRegistration {
+//			let json = auth.rawClientDataJSON
+//			print("json: \(String(data: json, encoding: .utf8)!)")
+////			print("credentialID: \(String(data: auth.credentialID, encoding: .utf8)!)")
+//			
+//			if let attestationObject = auth.rawAttestationObject {
+//				
+//				// Extract components from the credential
+//				  let rawId = auth.credentialID // The credential ID in raw format
+//				  let clientDataJSON = auth.rawClientDataJSON // The clientDataJSON object
+//
+//				  // Base64 or Base64Url encode the data to send over to the server
+//				  let rawIdBase64 = rawId.base64EncodedString()
+//				  let clientDataBase64 = clientDataJSON.base64EncodedString()
+//					let attestationBase64 = attestationObject.base64EncodedString()
+//
+//				  // Create a dictionary to send to the server
+//				  let registrationPayload: [String: Any] = [
+//					  "id": rawIdBase64,
+//					  "clientDataJSON": clientDataBase64,
+//					  "attestationObject": attestationBase64,
+//					  "type": "public-key"
+//				  ]
+//
+//				
+//				Task {
+//					let jsonData = try JSONSerialization.data(withJSONObject: registrationPayload, options: [])
+//					let request = WebauthnRegistration(base: "4a5b-2003-ed-5f3f-e300-84da-5e51-6029-881a.ngrok-free.app", body: jsonData)
+//					
+//					let response = try await request.execute()
+//					print("=== response: \(response)")
+//					if let httpResponse = response.1 as? HTTPURLResponse {
+//						print("--- webauthn --- httpResponse: \(httpResponse)")
+//					}
+//				}
+//			
+//				let decodedAtt = decodeRawAttestationObject(rawAttestationObject: [UInt8](attestationObject))
+//				print("decodedAtt: \(decodedAtt)")
+//				let att64 = attestationObject.base64EncodedString() // base64EncodedString()
+//				
+//				let clientData = auth.rawClientDataJSON.base64EncodedString()
+//
+//			}
+//		} else if let auth =  authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialAssertion {
+//			let clientJSON = String(data: auth.rawClientDataJSON, encoding: .utf8)
+//			print("credentialID: \(auth.credentialID)")
+//			print("clientJSON: \(clientJSON)")
+////			let authJSON = String(data: auth.rawAuthenticatorData, encoding: .utf8)
+//			
+//			let authJSON = decodeRawAttestationObject(rawAttestationObject: [UInt8](auth.rawAuthenticatorData))
+//			
+//			print("authJSON: \(authJSON)")
+//		}
 	}
 
 	func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
